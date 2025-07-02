@@ -1,0 +1,33 @@
+# Git files
+.git
+.gitignore
+
+# Documentation
+README.md
+readme.md
+*.md
+exercise.txt
+
+# Output files
+*.txt
+!banners/*.txt
+ascii-art.txt*
+ascii-art-*.txt
+
+# Development files
+.vscode/
+.env
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+ascii-art-web
+*.exe
+
+# Docker files (not needed in build context)
+docker-compose.yml
+docker-manage.sh
+docker-manage.ps1
+
+# Audit script
+audit.sh

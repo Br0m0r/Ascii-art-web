@@ -1,0 +1,222 @@
+ascii-art-web
+succeeded
+Repo to create for this project
+https://platform.zone01.gr/git/mfoteino/ascii-art-web
+Go
+9.20 kB
+go
+35%
+html
+10%
+back-end
+10%
+front-end
+10%
+2
+3
+Mandatory
+Objectives
+
+Ascii-art-web consists in creating and running a server, in which it will be possible to use a web GUI (graphical user interface) version of your last project, ascii-art.
+
+Your webpage must allow the use of the different banners:
+
+    shadow
+
+    standard
+
+    thinkertoy
+
+Implement the following HTTP endpoints:
+
+    GET /: Sends HTML response, the main page.
+    1.1. GET Tip: go templates to receive and display data from the server.
+
+    POST /ascii-art: that sends data to Go server (text and a banner)
+    2.1. POST Tip: use form and other types of tags to make the post request.\
+
+The way you display the result from the POST is up to you. What we recommend are one of the following :
+
+    Display the result in the route /ascii-art after the POST is completed. So going from the home page to another page.
+
+    Or display the result of the POST in the home page. This way appending the results in the home page.
+
+The main page must have:
+
+    text input
+
+    radio buttons, select object or anything else to switch between banners
+
+    button, which sends a POST request to '/ascii-art' and outputs the result on the page.
+
+HTTP status code
+
+Your endpoints must return appropriate HTTP status codes.
+
+    OK (200), if everything went without errors.
+
+    Not Found, if nothing is found, for example templates or banners.
+
+    Bad Request, for incorrect requests.
+
+    Internal Server Error, for unhandled errors.
+
+In the root project directory create a README.MD file with the following sections and contents:
+
+    Description
+
+    Authors
+
+    Usage: how to run
+
+    Implementation details: algorithm
+
+Instructions
+
+    HTTP server must be written in Go.
+
+    HTML templates must be in the project root directory templates.
+
+    The code must respect the good practices.
+
+Allowed packages
+
+    Only the standard go packages are allowed
+
+
+
+
+    dockerize
+succeeded
+Repo to create for this project
+https://platform.zone01.gr/git/gpapadopoulos/ascii-art-web-dockerize
+Go
+9.20 kB
+docker
+10%
+back-end
+15%
+2
+4
+Optional
+Objectives
+
+You must follow the same principles as the first subject.
+
+    For this project you must create at least :
+
+        one Dockerfile
+
+        one image
+
+        one container
+
+    You must apply metadata to Docker objects.
+
+    You have to take caution of unused object (often referred to as "garbage collection").
+
+Instructions
+
+    The web server must be created in Go.
+
+    The code must respect the good practices.
+
+    You must use Docker.
+
+    The project must have a Dockerfile.
+
+    Your Dockerfile must respect the Dockerfile good practices.
+
+Allowed packages
+
+    Only the standard go packages are allowed.
+
+Usage
+
+    You can see all about Docker on docker docs.
+
+This project will help you learn about :
+
+    Client utilities.
+
+    The basics of web :
+
+        Server
+
+        HTML
+
+        HTTP
+
+    Ways to receive data.
+
+    Ways to output data.
+
+    Learning what is docker.
+
+    Using and setting up Docker :
+
+        Services and dependencies.
+
+        Containerizing an application.
+
+        Compatibility/Dependency.
+
+        Creating images.
+
+
+
+        export-file
+succeeded
+Repo to create for this project
+https://platform.zone01.gr/git/mfoteino/ascii-art-web-export-file
+Go
+9.20 kB
+back-end
+20%
+2
+4
+Optional
+Objectives
+
+You must follow the same principles as the first subject.
+
+Ascii-art-web-export consists on making sure that it is possible to export the output of the web application, at least in one export format at your choice.
+
+    You should be able to export the result of the ascii-art project implemented in the website.
+
+    The file must be exported with the right permissions (read and write) for the user.
+
+The Hypertext Transfer Protocol (HTTP) is the foundation of data communication for the World Wide Web (www). When sending a file or image as part of the HTTP response we must include the use of HTTP headers.
+
+Headers used for file transfer are Content-Type, Content-Length and Content-Disposition and more if needed, but for this project you will be obligated to use those headers.
+Instructions
+
+As you already learned from the previous project you must create a new HTTP endpoint to be able to transfer the file to the client. The following instructions must also be followed :
+
+    The web server must export at least in one export format.
+
+    The web server must be created in Go.
+
+    The web site must include a button or a link to download/export the file.
+
+    You must handle website errors.
+
+    The code must respect the good practices.
+
+Allowed packages
+
+    Only the standard go packages are allowed
+
+This project will help you learn about :
+
+    The basics of export formats :
+
+        Text File (txt)
+
+        Here are some more examples
+
+    HTTP headers
+
+    Ways to receive data.
+
+    Ways to output data.

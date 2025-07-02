@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Web - Purple Neon</title>
+    <style>
+        :root {
+            --neon-purple: #b700ff;
+            --neon-purple-glow: rgba(183, 0, 255, 0.4);
+            --dark-purple: #2a0042;
+        }
+
+        body {
+            background-color: #000;
+            color: var(--neon-purple);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px var(--neon-purple),
+                         0 0 20px var(--neon-purple),
+                         0 0 30px var(--neon-purple);
+            animation: glow 1.5s ease-in-out infinite alternate;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        textarea {
+            width: 100%;
+            background-color: rgba(42, 0, 66, 0.3);
+            border: 1px solid var(--neon-purple);
+            color: var(--neon-purple);
+            padding: 15px;
+            font-size: 16px;
+            margin: 20px 0;
+            box-shadow: 0 0 15px var(--neon-purple-glow);
+        }
+
+        .banner-options {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: transparent;
+            color: var(--neon-purple);
+            border: 1px solid var(--neon-purple);
+            padding: 12px 24px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        #output {
+            background-color: rgba(42, 0, 66, 0.3);
+            border: 1px solid var(--neon-purple);
+            padding: 20px;
+            margin-top: 20px;
+            white-space: pre;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ASCII Art Generator</h1>
+        <form action="/ascii-art" method="POST">
+            <textarea name="text" rows="4" required placeholder="Enter your text here...">{{.Text}}</textarea>
+            
+            <div class="banner-options">
+                <div class="banner-options">
+                    <input type="radio" name="banner" value="standard" {{if eq .Banner "standard"}}checked{{end}}> Standard
+                    <input type="radio" name="banner" value="shadow" {{if eq .Banner "shadow"}}checked{{end}}> Shadow
+                    <input type="radio" name="banner" value="thinkertoy" {{if eq .Banner "thinkertoy"}}checked{{end}}> Thinkertoy
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Generate</button>
+                <button formaction="/ascii-art?export=true" formmethod="POST">Export</button>
+            </div>
+        </form>
+
+        <pre id="output">{{.Output}}</pre>
+    </div>
+</body>
+</html>
